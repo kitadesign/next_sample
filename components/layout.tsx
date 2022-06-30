@@ -6,16 +6,20 @@ interface Props {
   children?: React.ReactNode
   title?: string
   description?: string
+  keywords?: string[]
 }
 
-const Layout = ({ children, title, description }: Props) => {
+const Layout = ({ children, title, description, keywords }: Props) => {
   const pageTitle = title || 'ページタイトル'
+  const pageDescription =description || 'ページ概要'
   return (
     <>
       <div className="wrap">
         <Head>
           <title>{pageTitle}</title>
-          <meta name="description" content={description || 'ページ概要'} />
+          <meta name="description" content={pageDescription} />
+          <meta name="keywords" content={keywords && keywords?.join(',')} />
+          <meta property="og:description" content={pageDescription} />
         </Head>
         <header>
           <h1>{pageTitle}</h1>
