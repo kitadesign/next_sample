@@ -1,6 +1,7 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import styled, { ThemeProvider } from 'styled-components'
+import { RecoilRoot }from 'recoil'
 import theme from 'styled-theming'
 import Head from 'next/head'
 import { googleTagManagerId } from '../utils/gtm'
@@ -19,7 +20,7 @@ const Box = styled.div`
 
 function App({ Component, pageProps }: AppProps) {
   return (
-    <>
+    <RecoilRoot>
       <GoogleTagManager
         googleTagManagerId={googleTagManagerId as GoogleTagManagerId}
       />
@@ -31,7 +32,7 @@ function App({ Component, pageProps }: AppProps) {
           <Component {...pageProps} />
         </Box>
       </ThemeProvider>
-    </>
+    </RecoilRoot>
   )
 }
 
