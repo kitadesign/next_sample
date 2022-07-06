@@ -12,7 +12,6 @@ const Page = styled.div`
 const Button = styled.button`
   padding: 10px;
 `
-
 const TestPage: NextPage = () => {
   let [count, setCount] = useState(0)
 

@@ -1,5 +1,8 @@
 {
   "extends": ["eslint:recommended", "next/core-web-vitals"],
+  "plugins": [
+    "react-hooks"
+  ],
   "rules": {
     "no-multiple-empty-lines": ["error", { "max": 1 }],
     "quotes": ["error", "single"],
@@ -29,6 +32,8 @@
     }],
     "react/jsx-wrap-multilines": ["warn", {
       "return": "parens-new-line"
-    }]
+    }],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
   }
 }
